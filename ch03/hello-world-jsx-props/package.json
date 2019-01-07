@@ -1,4 +1,7 @@
 {
+	"scripts": {
+		"build": "./node_modules/.bin/babel js/script.js -o js/script.js"
+	},
 	"babel": {
 		"presets": [
 			"react"
