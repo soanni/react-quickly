@@ -1,0 +1,14 @@
+{
+	"scripts": {
+		"build-clock": "./node_modules/.bin/babel jsx -d js -w"
+	},
+	"babel": {
+		"presets": [
+			"react"
+		]
+	},
+	"devDependencies": {
+		"babel-cli": "^6.9.0",
+		"babel-preset-react": "^6.5.0"
+	}
+}
