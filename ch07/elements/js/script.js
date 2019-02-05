@@ -14,7 +14,7 @@ class Content extends React.Component {
 	handleRadio(event) {
 		let obj = {};
 		obj[event.target.value] = event.target.checked;
-		this.setState(radioGroup);
+		this.setState({ radioGroup: obj });
 	}
 
 	render() {
