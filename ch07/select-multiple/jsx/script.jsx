@@ -7,19 +7,27 @@ class Content extends React.Component {
 
 	handleSelectChange(event) {
 		let clonedArray = Array.from(this.state.selectedValues)
-		if(clonedArray.indexOf(event.target.value) === -1) {
+		let index = clonedArray.indexOf(event.target.value)
+		console.log(index)
+		if( index === -1) {
 			clonedArray.push(event.target.value)
+			console.log(clonedArray)
+		} else {
+			clonedArray.splice(index, 1)
+			console.log(clonedArray)
 		}
 		this.setState({selectedValues: clonedArray})
 	}
 
 	render() {
 		return <form>
-			<select multiple={true} value={this.state.selectedValues} onChange={this.handleSelectChange}>
-				<option value="ruby">Ruby</option>
-				<option value="node">Node</option>
-				<option value="python">Python</option>
-			</select>
+			<div className="form-group">
+				<select multiple={true} className="form-control" value={this.state.selectedValues} onChange={this.handleSelectChange}>
+					<option value="ruby">Ruby</option>
+					<option value="node">Node</option>
+					<option value="python">Python</option>
+				</select>
+			</div>
 		</form>
 	}
 }

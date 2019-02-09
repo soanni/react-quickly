@@ -14,22 +14,26 @@ class Content extends React.Component {
 			"form",
 			null,
 			React.createElement(
-				"select",
-				{ value: this.state.selectedValue, onChange: this.handleSelectChange },
+				"div",
+				{ className: "form-group" },
 				React.createElement(
-					"option",
-					{ value: "ruby" },
-					"Ruby"
-				),
-				React.createElement(
-					"option",
-					{ value: "node" },
-					"Node"
-				),
-				React.createElement(
-					"option",
-					{ value: "python" },
-					"Python"
+					"select",
+					{ className: "form-control", value: this.state.selectedValue, onChange: this.handleSelectChange },
+					React.createElement(
+						"option",
+						{ value: "ruby" },
+						"Ruby"
+					),
+					React.createElement(
+						"option",
+						{ value: "node" },
+						"Node"
+					),
+					React.createElement(
+						"option",
+						{ value: "python" },
+						"Python"
+					)
 				)
 			)
 		);

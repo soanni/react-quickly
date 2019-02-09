@@ -11,11 +11,13 @@ class Content extends React.Component {
 
 	render() {
 		return <form>
-			<select value={this.state.selectedValue} onChange={this.handleSelectChange}>
-				<option value="ruby">Ruby</option>
-				<option value="node">Node</option>
-				<option value="python">Python</option>
-			</select>
+			<div className="form-group">
+				<select className="form-control" value={this.state.selectedValue} onChange={this.handleSelectChange}>
+					<option value="ruby">Ruby</option>
+					<option value="node">Node</option>
+					<option value="python">Python</option>
+				</select>
+			</div>
 		</form>
 	}
 }

@@ -7,8 +7,14 @@ class Content extends React.Component {
 
 	handleSelectChange(event) {
 		let clonedArray = Array.from(this.state.selectedValues);
-		if (clonedArray.indexOf(event.target.value) === -1) {
+		let index = clonedArray.indexOf(event.target.value);
+		console.log(index);
+		if (index === -1) {
 			clonedArray.push(event.target.value);
+			console.log(clonedArray);
+		} else {
+			clonedArray.splice(index, 1);
+			console.log(clonedArray);
 		}
 		this.setState({ selectedValues: clonedArray });
 	}
@@ -18,22 +24,26 @@ class Content extends React.Component {
 			"form",
 			null,
 			React.createElement(
-				"select",
-				{ multiple: true, value: this.state.selectedValues, onChange: this.handleSelectChange },
+				"div",
+				{ className: "form-group" },
 				React.createElement(
-					"option",
-					{ value: "ruby" },
-					"Ruby"
-				),
-				React.createElement(
-					"option",
-					{ value: "node" },
-					"Node"
-				),
-				React.createElement(
-					"option",
-					{ value: "python" },
-					"Python"
+					"select",
+					{ multiple: true, className: "form-control", value: this.state.selectedValues, onChange: this.handleSelectChange },
+					React.createElement(
+						"option",
+						{ value: "ruby" },
+						"Ruby"
+					),
+					React.createElement(
+						"option",
+						{ value: "node" },
+						"Node"
+					),
+					React.createElement(
+						"option",
+						{ value: "python" },
+						"Python"
+					)
 				)
 			)
 		);
